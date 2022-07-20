@@ -1,0 +1,6 @@
+[
+  {
+    "cve": "SNYK-ALPINE315-MUSL-1928332",
+    "alwaysOmit": true
+  }
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>The Conference - QR</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #242424;
+        color: #eaeaea;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .container {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content {
+        box-sizing: border-box;
+        padding: 36px 24px 36px 24px;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0;
+      }
+
+      p.id {
+        font-size: 110px;
+        color: #fff;
+        margin: 0;
+        margin-top: 36px;
+        text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
+        text-align: center;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const url = new URL(window.location.href);
+        const parts = url.pathname.split('/');
+        var id = 'N / A';
+        for (var i = 0; i < parts.length; i += 1) {
+          if (parts[i] === 'qr-redirect') {
+            id = parts[i + 1];
+            break;
+          }
+        }
+
+        const target = document.getElementById('id-display');
+        target.innerText = id;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Hello!</h1>
+        <p>You've scanned the QR code with the ID:</p>
+        <p class="id" id="id-display"></p>
+      </div>
+    </div>
+  </body>
+</html>
